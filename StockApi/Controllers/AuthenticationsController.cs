@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using System.Xml;
 using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using StockApi.BO;
 using StockApi.Converters;
 using StockApi.Entities;
@@ -19,16 +21,20 @@ namespace StockApi.Controllers
     public class AuthenticationsController : ControllerBase
     {
         private readonly IAuthentication _authentication;
-
-        public AuthenticationsController(IAuthentication authentication, IDataProtectionProvider provider)
+        private readonly IConfiguration _config;
+        private readonly string PasswordDecrypter;
+        
+        public AuthenticationsController(IAuthentication authentication, IDataProtectionProvider provider,IConfiguration configuration , ISecret secret)
         {
             _authentication = authentication;
+            _config = configuration;
+            PasswordDecrypter = _config.GetValue<string>("keys:PasswordDecrypter").ToString();
         }
 
         // GET: api/<Authentications>
         [HttpGet]
         public ICollection<UserBO> Get()
-        {
+        {    
             return _authentication.Get();
         }
 
@@ -43,6 +49,7 @@ namespace StockApi.Controllers
         [HttpPost(nameof(Register))]
         public ICollection<UserBO> Register([FromBody] UserBO user)
         {
+            user.Password = SecurePasswordHasher.Encrypt(user.Password, PasswordDecrypter);
             ICollection<UserBO> userList = new List<UserBO>();
             userList.Add(user);
             return _authentication.Create(userList);
@@ -51,7 +58,7 @@ namespace StockApi.Controllers
         [HttpPost(nameof(Login))]
         public bool Login([FromBody] UserBO user)
         {
-            //user.Password = _protector.Protect(user.Password);
+            user.Password = SecurePasswordHasher.Encrypt(user.Password, PasswordDecrypter.ToString());
             return _authentication.Login(user);
         }
 

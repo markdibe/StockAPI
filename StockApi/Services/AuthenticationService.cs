@@ -17,6 +17,7 @@ namespace StockApi.Services
         private readonly StockContext _context;
         private UserConverter converter;
         private readonly IDataProtector _protector;
+        
         public AuthenticationService(StockContext context, IDataProtectionProvider provider)
         {
             _context = context;
@@ -88,10 +89,10 @@ namespace StockApi.Services
 
         private bool RightEmailPass(string email, string password)
         {
-            string _password = _protector.Protect(password);
+            
             return _context.Users.Any(x =>
             x.Email.ToLower().Trim().Equals(email.ToLower().Trim())
-            &&  x.Password.Equals(_password)
+            &&  x.Password.Equals(password)
             );
         }
 

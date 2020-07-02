@@ -15,8 +15,9 @@ namespace StockApi.Converters
             {
                 Email = bo.Email,
                 Password = bo.Password,
-                UserId = bo.Password,
-                UserName = bo.UserName
+                UserId = bo.UserId,
+                UserName = bo.UserName,
+                EncriptionKey = bo.EncriptionKey
             };
             return user;
         }
@@ -28,7 +29,8 @@ namespace StockApi.Converters
                 UserName = user.UserName,
                 UserId = user.UserId,
                 Password = user.Password,
-                Email = user.Email
+                Email = user.Email,
+                EncriptionKey = user.EncriptionKey
             };
             return bo;
         }

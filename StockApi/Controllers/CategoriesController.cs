@@ -27,7 +27,7 @@ namespace StockApi.Controllers
         }
 
         // GET api/<CategoriesController>/5
-        [HttpGet("{id:Int64}")]
+        [HttpGet("{id:int}")]
         public CategoryBO Get(Int64 id)
         {
             return _category.GetById(id);
@@ -41,7 +41,7 @@ namespace StockApi.Controllers
         }
 
         // PUT api/<CategoriesController>/5
-        [HttpPut("{id:Int64}")]
+        [HttpPut("{id:long}")]
         public CategoryBO Put(Int64 id, [FromBody] CategoryBO category)
         {
             if (id != category.Id) { return null; }
@@ -49,7 +49,7 @@ namespace StockApi.Controllers
         }
 
         // DELETE api/<CategoriesController>/5
-        [HttpDelete("{id:Int64}")]
+        [HttpDelete("{id:long}")]
         public CategoryBO Delete(Int64 id)
         {
             return _category.Delete(id);

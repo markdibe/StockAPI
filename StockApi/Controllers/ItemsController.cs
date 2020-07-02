@@ -28,7 +28,7 @@ namespace StockApi.Controllers
         }
 
         // GET api/<ItemsController>/5
-        [HttpGet("{id:string}")]
+        [HttpGet("{id:Guid}")]
         public ItemBO Get(string id)
         {
             return _item.GetById(id);
@@ -42,14 +42,14 @@ namespace StockApi.Controllers
         }
 
         // PUT api/<ItemsController>/5
-        [HttpPut("{id:string}")]
+        [HttpPut("{id:Guid}")]
         public ItemBO Put(string id, [FromBody] ItemBO item)
         {
             return _item.Update(item);
         }
 
         // DELETE api/<ItemsController>/5
-        [HttpDelete("{id:string}")]
+        [HttpDelete("{id:Guid}")]
         public ItemBO Delete(string  id)
         {
             return _item.Delete(id);
