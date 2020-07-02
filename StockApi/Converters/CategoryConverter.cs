@@ -9,13 +9,18 @@ namespace StockApi.Converters
 {
     public class CategoryConverter
     {
+        private ItemConverter converter; 
+        public CategoryConverter()
+        {
+            converter = new ItemConverter();
+        }
         public Category Convert(CategoryBO cbo)
         {
             Category cat = new Category
             {
                 Description = cbo.Description,
                 Id = cbo.Id,
-                Items = cbo.Items,
+                Items = converter.Convert(cbo.Items.ToList()) ,
                 Name = cbo.Name
             };
             return cat;
@@ -26,7 +31,7 @@ namespace StockApi.Converters
             CategoryBO cbo = new CategoryBO
             {
                 Name = cat.Name,
-                Items = cat.Items,
+                Items = converter.Convert(cat.Items.ToList()),
                 Id = cat.Id,
                 Description = cat.Description
             };

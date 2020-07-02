@@ -73,6 +73,8 @@ namespace StockApi
             _service = service;
             _service.AddDataProtection();
             _service.AddScoped<IAuthentication, AuthenticationService>();
+            _service.AddScoped<ICategory, CategoryService>();
+            _service.AddScoped<IItem, ItemService>();
         }
     }
 }
