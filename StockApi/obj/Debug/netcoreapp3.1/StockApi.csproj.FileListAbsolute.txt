@@ -41,8 +41,6 @@ C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreap
 C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
-C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\obj\Debug\netcoreapp3.1\StockApi.csproj.CoreCompileInputs.cache
-C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\obj\Debug\netcoreapp3.1\StockApi.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreapp3.1\StockApi.deps.json
 C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreapp3.1\StockApi.runtimeconfig.json
 C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreapp3.1\StockApi.runtimeconfig.dev.json
@@ -52,3 +50,9 @@ C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreap
 C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\obj\Debug\netcoreapp3.1\StockApi.dll
 C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\obj\Debug\netcoreapp3.1\StockApi.pdb
 C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\obj\Debug\netcoreapp3.1\StockApi.genruntimeconfig.cache
+C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\obj\Debug\netcoreapp3.1\StockApi.csproj.CoreCompileInputs.cache
+C:\Users\dibem.PRESIDENCY\Documents\GitHub\StockApi\StockApi\obj\Debug\netcoreapp3.1\StockApi.MvcApplicationPartsAssemblyInfo.cache
