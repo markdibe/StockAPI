@@ -57,15 +57,16 @@ namespace StockApi.Controllers
 
         // PUT api/<Authentications>/5
         [HttpPut]
-        public void Put([FromBody] User editedUser)
+        public UserBO Put([FromBody] UserBO editedUser)
         {
-
+            return _authentication.Update(editedUser);
         }
 
         // DELETE api/<Authentications>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public ICollection<UserBO> Delete(ICollection<string> Ids)
         {
+            return _authentication.Delete(Ids);
         }
     }
 }

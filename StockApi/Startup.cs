@@ -62,9 +62,7 @@ namespace StockApi
             });
 
 
-        }
-
-       
+        }  
     }
 
     public class CollectionOfServices
