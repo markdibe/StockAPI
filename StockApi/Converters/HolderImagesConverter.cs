@@ -43,12 +43,12 @@ namespace StockApi.Converters
             return holder;
         }
 
-        public List<HolderImages> HolderImageList(List<HolderImagesBO> holderImages)
+        public List<HolderImages> Convert(List<HolderImagesBO> holderImages)
         {
             return holderImages.Select(x => Convert(x)).ToList();
         }
 
-        public List<HolderImagesBO> HolderImageList(List<HolderImages> holderImages)
+        public List<HolderImagesBO> Convert(List<HolderImages> holderImages)
         {
             return holderImages.Select(x => Convert(x)).ToList();
         }

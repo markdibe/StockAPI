@@ -14,9 +14,9 @@ namespace StockApi.Entities
         public string Id
         {
             get { return _Id; }
-            set { _Id = Guid.NewGuid().ToString() + "-" + DateTime.Now.ToString(); }
+            set { _Id = Guid.NewGuid().ToString(); }
         }
-        
+
         [ForeignKey(nameof(HolderInformation))]
         public Int64 HolderId { get; set; }
         public HolderInformationBO HolderInformation { get; set; }
@@ -24,5 +24,7 @@ namespace StockApi.Entities
         [ForeignKey(nameof(Image))]
         public string ImageId { get; set; }
         public ImageBO Image { get; set; }
+
+        public DateTime DateOfInsertion { get { return this.DateOfInsertion; } set { this.DateOfInsertion = DateTime.Now; } }
     }
 }
