@@ -1,4 +1,5 @@
-﻿using StockApi.BO;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using StockApi.BO;
 using StockApi.Entities;
 using System;
 using System.Collections.Generic;
@@ -17,17 +18,18 @@ namespace StockApi.Converters
 
         public StoreBO Convert(Store s)
         {
+            if(s is null) { return null; }
             StoreBO store = new StoreBO
             {
                 Address = s.Address,
                 City = s.City,
                 CoordinationX = s.CoordinationX,
-                CoordinationY = s.CoordinationY , 
-                Id =s.Id,
-                ItemsQuantity =s.ItemsQuantity,
-                Locations = lc.Convert(s.Locations.ToList()) ,
+                CoordinationY = s.CoordinationY,
+                Id = s.Id,
+                ItemsQuantity = s.ItemsQuantity,
+                Locations = lc.Convert(s.Locations.ToList()),
                 Name = s.Name,
-                Road=s.Road,
+                Road = s.Road,
                 Street = s.Street
             };
             return store;
@@ -35,9 +37,9 @@ namespace StockApi.Converters
 
 
 
-
         public Store Convert(StoreBO s)
         {
+            if (s == null) { return null; }
             Store store = new Store
             {
                 Address = s.Address,
@@ -51,18 +53,19 @@ namespace StockApi.Converters
                 Road = s.Road,
                 Street = s.Street
             };
-            return store ;
+            return store;
         }
 
 
-        
         public List<Store> Convert(List<StoreBO> stores)
         {
+            if (stores == null) return null;
             return stores.Select(x => Convert(x)).ToList();
         }
 
         public List<StoreBO> Convert(List<Store> stores)
         {
+            if (stores == null) return null;
             return stores.Select(x => Convert(x)).ToList();
         }
 

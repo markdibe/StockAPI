@@ -18,6 +18,7 @@ namespace StockApi.Converters
 
         public LocationBO Convert(Location l)
         {
+            if (l == null) { return null; }
             LocationBO location = new LocationBO
             {
                 CoordinationX = l.CoordinationX,
@@ -34,6 +35,7 @@ namespace StockApi.Converters
 
         public Location Convert(LocationBO l)
         {
+            if (l == null) { return null; }
             Location location = new Location
             {
                 CoordinationX = l.CoordinationX,
@@ -50,11 +52,13 @@ namespace StockApi.Converters
 
         public List<Location> Convert(List<LocationBO> locations)
         {
+            if (locations == null) { return null; }
             return locations.Select(x => Convert(x)).ToList();
         }
 
         public List<LocationBO> Convert(List<Location> locations)
         {
+            if (locations == null) { return null; }
             return locations.Select(x => Convert(x)).ToList();
         }
 

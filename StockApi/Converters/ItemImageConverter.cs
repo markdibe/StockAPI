@@ -21,6 +21,7 @@ namespace StockApi.Converters
 
         public ItemImageBO Convert(ItemImages ii)
         {
+            if (ii == null) { return null; }
             ItemImageBO itemImage = new ItemImageBO
             {
                 Id = ii.Id,
@@ -34,6 +35,7 @@ namespace StockApi.Converters
 
         public ItemImages Convert(ItemImageBO ii)
         {
+            if (ii == null) { return null; }
             ItemImages itemImage = new ItemImages
             {
                 Id = ii.Id,
@@ -47,11 +49,13 @@ namespace StockApi.Converters
 
         public List<ItemImages> Convert(List<ItemImageBO> itemImages)
         {
+            if (itemImages == null) { return null; }
             return itemImages.Select(x => Convert(x)).ToList();
         }
 
         public List<ItemImageBO> Convert(List<ItemImages> itemImages)
         {
+            if (itemImages == null) { return null; }
             return itemImages.Select(x => Convert(x)).ToList();
         }
 

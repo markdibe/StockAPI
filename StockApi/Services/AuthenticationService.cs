@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Configuration;
 using StockApi.BO;
 using StockApi.Context;
 using StockApi.Converters;
@@ -17,12 +18,15 @@ namespace StockApi.Services
         private readonly StockContext _context;
         private UserConverter converter;
         private readonly IDataProtector _protector;
-        
-        public AuthenticationService(StockContext context, IDataProtectionProvider provider)
+        private IConfiguration _configuration;
+
+        private string passwordKey;
+        public AuthenticationService(StockContext context, IDataProtectionProvider provider , IConfiguration configuration)
         {
             _context = context;
             converter = new UserConverter();
             _protector = provider.CreateProtector("ConfigurationManager.ConnectionStrings['StockManagerConnectionString'].ConnectionString");
+            _configuration = configuration;
         }
         public ICollection<UserBO> Create(ICollection<UserBO> Users)
         {
@@ -30,7 +34,7 @@ namespace StockApi.Services
             {
                 if (!EmailExisted(user.Email))
                 {
-                    user.EncriptionKey = _protector.Protect(user.Password);
+                    //user.EncriptionKey = _protector.Protect(user.Password);
                     User _user = converter.Convert(user);
                     _context.Users.Add(_user);
                 }
@@ -89,11 +93,11 @@ namespace StockApi.Services
 
         private bool RightEmailPass(string email, string password)
         {
-            
-            return _context.Users.Any(x =>
-            x.Email.ToLower().Trim().Equals(email.ToLower().Trim())
-            &&  x.Password.Equals(password)
-            );
+            passwordKey = _configuration.GetSection("Keys:PasswordDecrypter").Value.ToString();
+            User user = _context.Users.FirstOrDefault(x => x.Email.ToLower().Trim().Equals(email.ToLower().Trim()));
+            string decryptedUserPass = SecurePasswordHasher.Decrypt(user.Password, passwordKey);
+            if (decryptedUserPass.Equals(password)) { return true; }
+            return false;
         }
 
 

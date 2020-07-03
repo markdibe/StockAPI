@@ -3,6 +3,7 @@ using StockApi.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace StockApi.Converters
@@ -20,6 +21,7 @@ namespace StockApi.Converters
 
         public ItemLocationTransaction Convert(ItemLocationTransactionBO ilt)
         {
+            if (ilt == null) { return null; }
             ItemLocationTransaction itemLocationTransaction = new ItemLocationTransaction
             {
                 DateOfTransaction = ilt.DateOfTransaction,
@@ -34,6 +36,7 @@ namespace StockApi.Converters
 
         public ItemLocationTransactionBO Convert(ItemLocationTransaction ilt)
         {
+            if (ilt == null) { return null; }
             ItemLocationTransactionBO itemLocationTransaction = new ItemLocationTransactionBO
             {
                 DateOfTransaction = ilt.DateOfTransaction,
@@ -48,6 +51,7 @@ namespace StockApi.Converters
 
         public List<ItemLocationTransaction> Convert(List<ItemLocationTransactionBO> itemLocationTransactions)
         {
+            if (itemLocationTransactions == null) { return null; }
             return itemLocationTransactions.Select(x => Convert(x)).ToList();
         }
 
@@ -55,6 +59,7 @@ namespace StockApi.Converters
 
         public List<ItemLocationTransactionBO> Convert(List<ItemLocationTransaction> itemLocationTransactions)
         {
+            if (itemLocationTransactions == null) { return null; }
             return itemLocationTransactions.Select(x => Convert(x)).ToList();
         }
     }

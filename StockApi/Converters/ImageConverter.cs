@@ -11,6 +11,7 @@ namespace StockApi.Converters
     {
         public ImageBO Convert(Image i)
         {
+            if (i == null) { return null; }
             ImageBO image = new ImageBO
             {
                 Description = i.Description,
@@ -23,6 +24,7 @@ namespace StockApi.Converters
 
         public Image Convert(ImageBO i)
         {
+            if (i == null) { return null; }
             Image image = new Image
             {
                 Description = i.Description,
@@ -35,11 +37,13 @@ namespace StockApi.Converters
 
         public List<Image> Convert(List<ImageBO> images)
         {
+            if (images == null) { return null; }
             return images.Select(i => Convert(i)).ToList();
         }
 
         public List<ImageBO> Convert(List<Image> images)
         {
+            if (images == null) { return null; }
             return images.Select(i => Convert(i)).ToList();
         }
     }

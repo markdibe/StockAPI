@@ -16,6 +16,7 @@ namespace StockApi.Converters
         }
         public Item Convert(ItemBO item)
         {
+            if (item == null) { return null; }
             Item Item = new Item
             {
                 BarCode = item.BarCode,
@@ -29,24 +30,27 @@ namespace StockApi.Converters
 
         public ItemBO Convert(Item item)
         {
+            if (item == null) { return null; }
             ItemBO itemBO = new ItemBO
             {
                 Id = item.Id,
                 Name = item.Name,
                 CategoryId = item.CategoryId,
                 BarCode = item.BarCode,
-                Category = converter.Convert(item.Category) 
+                Category = converter.Convert(item.Category)
             };
             return itemBO;
         }
 
         public List<Item> Convert(List<ItemBO> ItemList)
         {
+            if (ItemList == null) { return null; }
             return ItemList.Select(x => Convert(x)).ToList();
         }
 
         public List<ItemBO> Convert(List<Item> ItemList)
         {
+            if (ItemList == null) { return null; }
             return ItemList.Select(x => Convert(x)).ToList();
         }
     }

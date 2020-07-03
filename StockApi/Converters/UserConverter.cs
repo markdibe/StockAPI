@@ -11,6 +11,7 @@ namespace StockApi.Converters
     {
         public User Convert(UserBO bo)
         {
+            if (bo == null) { return null; }
             User user = new User()
             {
                 Email = bo.Email,
@@ -24,6 +25,7 @@ namespace StockApi.Converters
 
         public UserBO Convert(User user)
         {
+            if(user == null) { return null; }
             UserBO bo = new UserBO
             {
                 UserName = user.UserName,

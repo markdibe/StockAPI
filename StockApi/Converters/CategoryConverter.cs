@@ -9,18 +9,19 @@ namespace StockApi.Converters
 {
     public class CategoryConverter
     {
-        private ItemConverter converter; 
+        private ItemConverter converter;
         public CategoryConverter()
         {
             converter = new ItemConverter();
         }
         public Category Convert(CategoryBO cbo)
         {
+            if (cbo == null) return null;
             Category cat = new Category
             {
                 Description = cbo.Description,
                 Id = cbo.Id,
-                Items = converter.Convert(cbo.Items.ToList()) ,
+                Items = converter.Convert(cbo.Items.ToList()),
                 Name = cbo.Name
             };
             return cat;
@@ -28,6 +29,7 @@ namespace StockApi.Converters
 
         public CategoryBO Convert(Category cat)
         {
+            if (cat == null) return null;
             CategoryBO cbo = new CategoryBO
             {
                 Name = cat.Name,
@@ -40,12 +42,14 @@ namespace StockApi.Converters
 
         public List<Category> Convert(List<CategoryBO> catlist)
         {
-            List<Category> CatList  = catlist.Select(x => Convert(x)).ToList();
+            if (catlist == null) return null;
+            List<Category> CatList = catlist.Select(x => Convert(x)).ToList();
             return CatList;
         }
 
         public List<CategoryBO> Convert(List<Category> catlist)
         {
+            if (catlist == null) return null;
             return catlist.Select(x => Convert(x)).ToList();
         }
     }

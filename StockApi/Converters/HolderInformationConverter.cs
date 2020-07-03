@@ -17,7 +17,7 @@ namespace StockApi.Converters
         }
         public HolderInformation Convert(HolderInformationBO hi)
         {
-
+            if (hi == null) { return null; }
             HolderInformation holderInformation = new HolderInformation
             {
                 DateOfBirth = hi.DateOfBirth,
@@ -36,6 +36,7 @@ namespace StockApi.Converters
 
         public HolderInformationBO Convert(HolderInformation hi)
         {
+            if (hi == null) { return null; }
             HolderInformationBO holderInformation = new HolderInformationBO
             {
                 DateOfBirth = hi.DateOfBirth,
@@ -54,11 +55,13 @@ namespace StockApi.Converters
 
         public List<HolderInformation> Convert(List<HolderInformationBO> HolderInformationList)
         {
+            if (HolderInformationList == null) { return null; }
             return HolderInformationList.Select(x => Convert(x)).ToList();
         }
 
         public List<HolderInformationBO> Convert(List<HolderInformation> HolderInformationList)
         {
+            if (HolderInformationList == null) { return null; }
             return HolderInformationList.Select(x => Convert(x)).ToList();
         }
     }

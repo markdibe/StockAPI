@@ -7,6 +7,7 @@ namespace StockApi.Entities
 {
     public class Title
     {
+        [Key]
         public int TitleId { get; set; }
 
         [Required]

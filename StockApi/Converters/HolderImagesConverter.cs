@@ -19,6 +19,7 @@ namespace StockApi.Converters
 
         public HolderImages Convert(HolderImagesBO holderImages)
         {
+            if (holderImages == null) { return null; }
             HolderImages holder = new HolderImages
             {
                 HolderId = holderImages.HolderId,
@@ -32,6 +33,7 @@ namespace StockApi.Converters
 
         public HolderImagesBO Convert(HolderImages holderImages)
         {
+            if (holderImages == null) { return null; }
             HolderImagesBO holder = new HolderImagesBO
             {
                 HolderId = holderImages.HolderId,
@@ -45,11 +47,13 @@ namespace StockApi.Converters
 
         public List<HolderImages> Convert(List<HolderImagesBO> holderImages)
         {
+            if (holderImages == null) { return null; }
             return holderImages.Select(x => Convert(x)).ToList();
         }
 
         public List<HolderImagesBO> Convert(List<HolderImages> holderImages)
         {
+            if (holderImages == null) { return null; }
             return holderImages.Select(x => Convert(x)).ToList();
         }
     }

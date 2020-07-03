@@ -23,8 +23,8 @@ namespace StockApi.Controllers
         private readonly IAuthentication _authentication;
         private readonly IConfiguration _config;
         private readonly string PasswordDecrypter;
-        
-        public AuthenticationsController(IAuthentication authentication, IDataProtectionProvider provider,IConfiguration configuration , ISecret secret)
+
+        public AuthenticationsController(IAuthentication authentication, IConfiguration configuration)
         {
             _authentication = authentication;
             _config = configuration;
@@ -34,7 +34,7 @@ namespace StockApi.Controllers
         // GET: api/<Authentications>
         [HttpGet]
         public ICollection<UserBO> Get()
-        {    
+        {
             return _authentication.Get();
         }
 
@@ -58,7 +58,12 @@ namespace StockApi.Controllers
         [HttpPost(nameof(Login))]
         public bool Login([FromBody] UserBO user)
         {
-            user.Password = SecurePasswordHasher.Encrypt(user.Password, PasswordDecrypter.ToString());
+            if (user is null)
+            {
+                throw new ArgumentNullException(nameof(user));
+            }
+
+            //user.Password = SecurePasswordHasher.Encrypt(user.Password, PasswordDecrypter.ToString());
             return _authentication.Login(user);
         }
 

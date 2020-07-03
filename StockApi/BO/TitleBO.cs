@@ -8,6 +8,7 @@ namespace StockApi.BO
 {
     public class TitleBO
     {
+        [Key]
         public int TitleId { get; set; }
 
         [Required]
