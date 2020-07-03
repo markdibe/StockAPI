@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StockApi.BO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -18,10 +19,10 @@ namespace StockApi.Entities
         
         [ForeignKey(nameof(HolderInformation))]
         public Int64 HolderId { get; set; }
-        public HolderInformation HolderInformation { get; set; }
+        public HolderInformationBO HolderInformation { get; set; }
 
         [ForeignKey(nameof(Image))]
         public string ImageId { get; set; }
-        public Image Image { get; set; }
+        public ImageBO Image { get; set; }
     }
 }
