@@ -6994,25 +6994,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dibem.PRESIDENCY\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\lenovo\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dibem.PRESIDENCY\\Documents\\GitHub\\StockApi\\StockApi\\StockApi.csproj",
+      "projectUniqueName": "C:\\Users\\lenovo\\Documents\\GitHub\\Stock application BackEnd and Front End\\StockApi\\StockApi\\StockApi.csproj",
       "projectName": "StockApi",
-      "projectPath": "C:\\Users\\dibem.PRESIDENCY\\Documents\\GitHub\\StockApi\\StockApi\\StockApi.csproj",
-      "packagesPath": "C:\\Users\\dibem.PRESIDENCY\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dibem.PRESIDENCY\\Documents\\GitHub\\StockApi\\StockApi\\obj\\",
+      "projectPath": "C:\\Users\\lenovo\\Documents\\GitHub\\Stock application BackEnd and Front End\\StockApi\\StockApi\\StockApi.csproj",
+      "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lenovo\\Documents\\GitHub\\Stock application BackEnd and Front End\\StockApi\\StockApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\dibem.PRESIDENCY\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -7021,7 +7019,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://www.nuget.org/api/v2/": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
