@@ -43,7 +43,7 @@ namespace StockApi.Services
             Location location = converter.Convert(Get(Id));
             _context.Locations.Remove(location);
             _context.SaveChanges();
-            return converter.Convert(location)
+            return converter.Convert(location);
         }
 
         public List<LocationBO> Delete(List<long> Ids)

@@ -18,7 +18,7 @@ namespace StockApi.Entities
             }
             set
             {
-                _Id = Guid.NewGuid().ToString() + "-" + Name;
+                _Id = Guid.NewGuid().ToString() ;
             }
         }
 
