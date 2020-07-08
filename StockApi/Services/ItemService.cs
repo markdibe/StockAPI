@@ -31,19 +31,25 @@ namespace StockApi.Services
 
         public List<ItemBO> Create_List(List<ItemBO> ItemList)
         {
-            List<Item> Items = converter.Convert(ItemList);
-            Items.ForEach((item) =>
+            try
             {
-                _context.Items.Add(item);
-            });
-            _context.SaveChanges();
-            return converter.Convert(Items);
+                List<Item> Items = converter.Convert(ItemList);
+                Items.ForEach((item) =>
+                {
+                    _context.Items.Add(item);
+                });
+                _context.SaveChanges();
+                return converter.Convert(Items);
+            }
+            catch (Exception e) { throw (e); }
+
         }
 
         public ItemBO Delete(string Id)
         {
-            var item = converter.Convert(GetById(Id)) ;
-            if (item != null) {
+            var item = converter.Convert(GetById(Id));
+            if (item != null)
+            {
                 _context.Items.Remove(item);
             }
             _context.SaveChanges();

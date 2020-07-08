@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using StockApi.BO;
+using StockApi.Entities;
 using StockApi.IServices;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,15 +16,32 @@ namespace StockApi.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly ICategory _category;
-        public CategoriesController(ICategory category)
+        private readonly IItem _item;
+        public CategoriesController(ICategory category, IItem item)
         {
             _category = category;
+            _item = item;
         }
         // GET: api/<CategoriesController>
         [HttpGet]
         public ICollection<CategoryBO> Get()
         {
-            return _category.Get();
+
+            var list = _category.Get();
+            //List<ItemBO> items = new List<ItemBO>();
+            //int i = 0;
+            //list.ForEach((cat) =>
+            //{
+            //    ItemBO item = new ItemBO
+            //    {
+            //        BarCode = "00000000000",
+            //        CategoryId = cat.Id,
+            //        Name = i + "Item Name here" + i
+            //    };
+            //items.Add(item);
+            //});
+            //_item.Create_List(items);
+            return list;
         }
 
         // GET api/<CategoriesController>/5

@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lenovo\\Documents\\GitHub\\Stock application BackEnd and Front End\\StockApi\\StockApi\\StockApi.csproj": {}
+    "C:\\Users\\dibem.PRESIDENCY\\Documents\\GitHub\\StockApi\\StockApi\\StockApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lenovo\\Documents\\GitHub\\Stock application BackEnd and Front End\\StockApi\\StockApi\\StockApi.csproj": {
+    "C:\\Users\\dibem.PRESIDENCY\\Documents\\GitHub\\StockApi\\StockApi\\StockApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Documents\\GitHub\\Stock application BackEnd and Front End\\StockApi\\StockApi\\StockApi.csproj",
+        "projectUniqueName": "C:\\Users\\dibem.PRESIDENCY\\Documents\\GitHub\\StockApi\\StockApi\\StockApi.csproj",
         "projectName": "StockApi",
-        "projectPath": "C:\\Users\\lenovo\\Documents\\GitHub\\Stock application BackEnd and Front End\\StockApi\\StockApi\\StockApi.csproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Documents\\GitHub\\Stock application BackEnd and Front End\\StockApi\\StockApi\\obj\\",
+        "projectPath": "C:\\Users\\dibem.PRESIDENCY\\Documents\\GitHub\\StockApi\\StockApi\\StockApi.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dibem.PRESIDENCY\\Documents\\GitHub\\StockApi\\StockApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -42,10 +43,6 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.AspNet.WebApi.Core": {
-              "target": "Package",
-              "version": "[5.2.7, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.5, )"
