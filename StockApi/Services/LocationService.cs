@@ -3,6 +3,7 @@ using StockApi.Context;
 using StockApi.Converters;
 using StockApi.Entities;
 using StockApi.IServices;
+using StockApi.Parameters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,7 +44,7 @@ namespace StockApi.Services
             Location location = converter.Convert(Get(Id));
             _context.Locations.Remove(location);
             _context.SaveChanges();
-            return converter.Convert(location)
+            return converter.Convert(location);
         }
 
         public List<LocationBO> Delete(List<long> Ids)
@@ -77,6 +78,13 @@ namespace StockApi.Services
             _context.SaveChanges();
             return converter.Convert(updateLocation);
 
+        }
+
+        public IQueryable<LocationBO> GetQuery(QueryParameters parameters)
+        {
+            IQueryable<Location> locations = (_context.Locations);
+            locations = locations.Skip(parameters.Size * (parameters.Page - 1)).Take(parameters.Size);
+            return  locations.Select(x => converter.Convert(x));
         }
     }
 }

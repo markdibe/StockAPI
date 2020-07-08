@@ -40,7 +40,7 @@ namespace StockApi
             ///<summary>injecting unit of work that contain all services</summary>
             //services.AddScoped<IAuthentication,Authentication>();
             new CollectionOfServices(services);
-
+           
 
         }
 
@@ -79,6 +79,7 @@ namespace StockApi
             _service.AddScoped<IImage, ImageService>();
             _service.AddScoped<IHolderInfo, HolderInformationService>();
             _service.AddScoped<IHolderImage , HolderImageService>();
+            _service.AddScoped<ILocation, LocationService>();
             
         }
     }

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using StockApi.BO;
 using StockApi.Entities;
 using StockApi.IServices;
+using StockApi.Parameters;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -23,9 +24,10 @@ namespace StockApi.Controllers
         }
         // GET: api/<LocationsController>
         [HttpGet]
-        public List<LocationBO> Get()
+        public List<LocationBO> Get([FromQuery] QueryParameters parameters)
         {
-            return _location.Get();
+            IQueryable<LocationBO> locs = _location.GetQuery(parameters);
+            return locs.ToList();
         }
 
         [HttpGet]
@@ -45,21 +47,23 @@ namespace StockApi.Controllers
 
         // POST api/<LocationsController>
         [HttpPost]
-        public void Post([FromBody] LocationBO location)
+        public LocationBO Post([FromBody] LocationBO location)
         {
-
+            return _location.Create(location);
         }
 
         // PUT api/<LocationsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("{id:long}")]
+        public LocationBO Put(long id, [FromBody] LocationBO updatedLocation)
         {
+            return _location.Update(updatedLocation);
         }
 
         // DELETE api/<LocationsController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
+        [HttpDelete("{id:long}")]
+        public LocationBO Delete(long id)
         {
+            return _location.Delete(id);
         }
     }
 }

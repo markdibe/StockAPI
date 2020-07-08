@@ -1,5 +1,6 @@
 ﻿using StockApi.BO;
 using StockApi.Entities;
+using StockApi.Parameters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace StockApi.IServices
         List<LocationBO> Get();
 
         LocationBO Get(long Id);
-
+        IQueryable<LocationBO> GetQuery(QueryParameters parameters);
         LocationBO Update(LocationBO location);
 
 
